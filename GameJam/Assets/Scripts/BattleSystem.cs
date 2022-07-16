@@ -113,7 +113,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        if (state != BattleState.PLAYERTURN) ;
+        if (state != BattleState.PLAYERTURN)
             return;
 
         StartCoroutine(PlayerAttack());
