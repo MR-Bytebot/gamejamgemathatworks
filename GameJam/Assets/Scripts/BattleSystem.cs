@@ -69,6 +69,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             state = BattleState.PLAYERTURN;
+            PlayerTurn();
         }
     }
 
