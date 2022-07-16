@@ -18,6 +18,9 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
 
     public Text dialogueText;
+
+    public BattleUI playerHUD;
+    public BattleUI enemyHUD;
     
     // Start is called before the first frame update
     void Start()
@@ -29,11 +32,14 @@ public class BattleSystem : MonoBehaviour
     void SetupBattle()
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerGO.GetComponent<Unit>();
+        playerUnit = playerGO.GetComponent<Unit>();
 
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattlestation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "A wild " + enemyUnit.unitName + "I in the way!";
+
+        playerHUD.SetHUD(playerUnit);
+        enemyHUD.SetHUD(enemyUnit);
     }
 }
